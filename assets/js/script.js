@@ -6,14 +6,24 @@
 
 
 let URL = window.location.URL || window.webkitURL;  
+const allowedExtensions =  /(\.mp4|\.mov)$/i;
+const validFile = ['mp4', 'mov'];
 
 const videoUpload = () => {    
     let video = document.getElementById('video');
     let fileItem = document.getElementById('file');
     let files = fileItem.files;
-    let file = files[0];
-    let url = URL.createObjectURL(file);
-    video.src = url;
+    let file = files[0]; 
+    
+    if (!allowedExtensions.exec(file.name)) {
+        alert('Please Select ' + validFile + ' file');
+        return false;
+    }else{
+        let url = URL.createObjectURL(file);
+        video.src = url;
+    } 
+
+
 }
 
 

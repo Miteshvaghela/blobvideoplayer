@@ -23,10 +23,10 @@
             </div>
             <div class="row">
                 <div class="form" onsubmit="submitForm(event)">
-                   <form class="form" action="/" enctype="multipart/form-data">
+                   <form class="form" action="/" enctype="multipart/form-data" accept="video/mp4">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Upload File : </label>
-                        <input type="file" class="form-control" id="file" onchange="videoUpload()">
+                        <input type="file" class="form-control" id="file" onchange="videoUpload()" required>
                       </div>
                     <div class="mb-3">
                     <input type="submit" class="w-25 mx-auto d-block btn btn-primary" id="play" value="Play">
